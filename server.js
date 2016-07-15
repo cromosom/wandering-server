@@ -43,7 +43,6 @@ router.route('/geo')
       } else {
         res.json({message: 'Data created'});
       }
-
     });
 
   })
@@ -55,6 +54,19 @@ router.route('/geo')
         res.send(err);
       } else {
         res.json(geo);
+      }
+    });
+
+  })
+
+  .delete(function (req, res) {
+    var id = req.body._id;
+
+    DataSchema.remove({ '_id': id }, function (err) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json({message: 'Item ' + id + ' removed'});
       }
 
     });
