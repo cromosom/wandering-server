@@ -28,26 +28,30 @@ router.route('/geo')
 
   .post(function (req, res) {
     var spatial = new DataSchema();
+    // console.log(res);
     spatial.lat = req.body.lat;
+    spatial.long = req.body.long;
 
     spatial.save(function(err) {
       if (err) {
         res.send(err);
+      } else {
+        res.json({message: 'Data created'});
       }
 
-      res.json({message: 'Data created'});
     });
 
   })
 
   .get(function(req, res) {
-    
+
     DataSchema.find(function (err, geo) {
       if (err) {
         res.send(err);
+      } else {
+        res.json(geo);        
       }
 
-      res.json(geo);
     });
 
   });
