@@ -36,6 +36,7 @@ router.route('/geo')
     // console.log(res);
     spatial.lat = req.body.lat;
     spatial.long = req.body.long;
+    spatial.mediaUrl = req.body.mediaUrl;
 
     spatial.save(function(err) {
       if (err) {
