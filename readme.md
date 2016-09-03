@@ -1,4 +1,4 @@
-# Kleine Node REST Api ohne Sinn und Verstand
+# Little node RESTapi for testing purpose
 
 `npm install`
 
